@@ -1,0 +1,194 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temprtr Convertor</title>
+    <link rel="icon" href="icon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body {
+            margin: 0%;
+            padding: 0%;
+            font-family: "Poppins";
+        }
+
+        .main {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(#141e30, #243b55);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: bg 5s infinite;
+            transition: all 0.5s ease;
+        }
+
+        @keyframes bg {
+            0% {background-image: linear-gradient(-45deg, #141e30, #243b55);}
+            25% {background-image: linear-gradient(#1b2840, #203955);}
+            50% {background-image: linear-gradient(#141e30, #243b55);}
+            75% {background-image: linear-gradient(#18263f, #203955);}
+            100% {background-image: linear-gradient(-135deg, #1b283f, #243b55);}
+        }
+
+        .container {
+            width: 45%;
+            height: 55%;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 18px;
+            box-shadow: 5px 5px 25px;
+            padding: 12px;
+        }
+
+        .top {
+            height: 16%;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 34px;
+            font-weight: bold;
+        }
+
+        .mid {
+            height: 100%;
+            width: 100%;
+        }
+
+        .values {
+            height: 30%;
+            width: 100%;
+            display: flex;
+            /* background-color: #801414; */
+        }
+
+        .val1 {
+            overflow: hidden;
+            border-radius: 18px;
+            height: 28px;
+            width: 50%;
+            background-color: #fff;
+        }
+
+        .val1 input {
+            height: 100%;
+            width: 95%;
+            font-family: "Poppins";
+            margin-left: 8px;
+        }
+        
+        .val2 {
+            height: 100%;
+            width: 50%;
+            /* background-color: #fff; */
+            display: flex;
+            justify-content: center;
+        }
+
+        .val2 select {
+            width: 240px;
+            height: 26px;
+            border-radius: 18px;
+            font-size: 18px;
+            border: none;
+            outline-style: none;
+        }
+        
+        .but {
+            margin-top: 20px;
+            height: 18%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #submit {
+            height: 26px;
+            width: max-content;
+            padding: 10px;
+            display: flex;
+            font-family: "Poppins";
+            align-items: center;
+            font-size: 18px;
+            color: yellow;
+            background-color: transparent;
+            border: 2px solid yellow;
+            border-radius: 12px;
+            transition: all 0.5s ease;
+        }
+
+        #submit:hover {
+            background-color: yellow;
+            font-weight: bold;
+            /* border: 2px solid #0000ff; */
+            color: #0000ff;
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 42px;
+            color: transparent;
+            -webkit-text-stroke: 1px #0000ff;
+            -webkit-background-clip: text;
+            background-color: yellow;
+        }
+
+        .foot {
+            position: absolute;
+            bottom: 20;
+            height: 8%;
+            width: 95%;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 28px;
+        }
+
+        input {
+            border: none;
+            outline-style: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="top">
+                Convertor
+                <hr>
+            </div>
+            <form class="mid" id="ConvTemp" onsubmit="ConvTemp(); return false">
+                <div class="values">
+                    <div class="val1">
+                        <input id="temp" type="number" name="temp" value="0" placeholder="Enter the Value & Select it's unit.">
+                    </div>
+                    <div class="val2">
+                        <select name="vals" id="units">
+                            <option value="cel">&#176;Celcius</option>
+                            <option value="far">&#176;Fahrenheit</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="but">
+                    <button type="submit" name="temp" id="submit">Convert</button>
+                    <span id="result"></span>
+                </div>
+            </form>
+        </div>
+        <div class="foot">
+            <hr width="100%">
+            &copy; Suhail Ahmed 2024
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
